@@ -34,7 +34,7 @@ export function useCommandMenu(): UseCommandMenuReturn {
      }
 
     const prefix = text.startsWith("/") ? text.slice(1) : null;
-    if (prefix !== null && !prefix.includes("")){
+    if (prefix !== null && !prefix.includes(" ")){
         setShowCommandMenu(true);
     } else {
         setShowCommandMenu(false);
