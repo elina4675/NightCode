@@ -1,0 +1,51 @@
+[
+  {
+    "prompt_inputs": {
+      "content": "We present a novel machine learning framework integrating hidden Markov models with Bayesian network inference for genomic sequence classification. Our approach leverages probabilistic graphical models to capture dependencies between nucleotide positions, while employing expectation-maximization algorithms to optimize model parameters across large-scale DNA datasets. The computational pipeline combines bioinformatics tools for sequence alignment with statistical hypothesis testing to validate differential gene expression patterns. We demonstrate how kernel methods from support vector machine theory can be adapted for phylogenetic reconstruction, reducing dimensionality through principal component analysis while maintaining biological interpretability. Performance metrics evaluated on benchmark datasets show 23% improvement in classification accuracy compared to traditional alignment-free methods."
+    },
+    "solution_criteria": [
+      "Extracts topics spanning at least three distinct fields (bioinformatics, statistics, computer science)",
+      "Distinguishes between specific techniques and broader topic areas",
+      "Returns results as a JSON array of strings",
+      "Captures all major conceptual areas without duplicates"
+    ],
+    "task_description": "\"\n    Extract topics out of a passage of text from a scholarly article into a JSON array of strings\"\n    ",
+    "scenario": "Testing with a dense interdisciplinary passage containing overlapping topics from multiple fields (e.g., bioinformatics, statistics, and computer science) to verify the prompt can distinguish and extract distinct topic areas"
+  },
+  {
+    "prompt_inputs": {
+      "content": "Recent studies examining organizational behavior during market disruptions reveal patterns that challenge traditional management theory. When companies like Netflix shifted from DVD rentals to streaming, or when Kodak's internal teams developed digital photography prototypes years before competitors, these organizations demonstrated adaptive capacity through distributed decision-making and tolerance for experimentation. The literature increasingly documents how firms navigate technological change not through centralized strategic planning but via emergent processes where frontline employees identify opportunities, cross-functional teams rapidly prototype solutions, and organizational cultures explicitly reward intelligent failures. Such mechanisms appear particularly critical in industries facing exponential technological change, where incumbent knowledge often becomes obsolete faster than formal strategic cycles can adapt."
+    },
+    "solution_criteria": [
+      "Identifies implicit topics inferable from examples and context (e.g., organizational change, innovation management, digital transformation) rather than only explicitly named concepts",
+      "Extracts topics that emerge from the discussion of mechanisms and patterns described throughout the passage",
+      "Returns results as a valid JSON array of strings"
+    ],
+    "task_description": "\"\n    Extract topics out of a passage of text from a scholarly article into a JSON array of strings\"\n    ",
+    "scenario": "Testing with a passage containing implicit topics that require inference rather than direct mention, where key concepts are discussed through examples and context clues rather than explicit topic statements"
+  },
+  {
+    "prompt_inputs": {
+      "content": "Recent advances in CRISPR-Cas9 gene editing have demonstrated remarkable precision in correcting point mutations associated with sickle cell disease. The technique involves delivering the Cas9 nuclease and guide RNA directly into patient hematopoietic stem cells, where the molecular machinery locates the defective \u03b2-globin gene sequence and catalyzes precise DNA strand breaks at the target site. Subsequent cellular repair mechanisms restore normal hemoglobin production, effectively eliminating the sickling phenotype. Clinical trials have shown that 95% of treated patients exhibit sustained remission of vaso-occlusive crises, with no off-target mutations detected in comprehensive genomic analysis of edited cells."
+    },
+    "solution_criteria": [
+      "Extracts only the core topics without over-segmenting minor technical details (e.g., 'CRISPR-Cas9 gene editing', 'sickle cell disease', 'hematopoietic stem cells' should be consolidated into broader topics rather than treated as separate topics)",
+      "Returns output as a JSON array of strings",
+      "Avoids creating false distinctions from tangential mentions (e.g., '95% remission rate' and 'no off-target mutations' should not be listed as separate topics)"
+    ],
+    "task_description": "\"\n    Extract topics out of a passage of text from a scholarly article into a JSON array of strings\"\n    ",
+    "scenario": "Testing with a short, focused passage about a single narrow topic to ensure the prompt doesn't over-segment or create false topic distinctions from minor details or tangential mentions"
+  },
+  {
+    "prompt_inputs": {
+      "content": "Recent advances in CRISPR-Cas9 gene editing technology have revolutionized molecular biology research. The clustered regularly interspaced short palindromic repeats (CRISPR) system, derived from bacterial adaptive immunity, utilizes the Cas9 endonuclease to create double-strand breaks at specific genomic loci. Researchers employing CRISPR/dCas9 (catalytically dead Cas9) fusion proteins have developed epigenetic modification tools, while off-target editing remains a critical concern addressed through high-fidelity Cas9 variants and improved sgRNA (single guide RNA) design algorithms. The NHEJ (non-homologous end joining) and HDR (homology-directed repair) pathways determine whether edits result in insertions/deletions or precise sequence replacements."
+    },
+    "solution_criteria": [
+      "Recognizes CRISPR, Cas9, dCas9, sgRNA, NHEJ, and HDR as related terminology belonging to the single topic of gene editing technology rather than treating each acronym as a separate topic",
+      "Extracts topics at an appropriate level of abstraction (e.g., 'gene editing', 'CRISPR technology', or 'epigenetic modification') rather than fragmenting the passage into excessive topic subdivisions",
+      "Returns output as a valid JSON array of strings"
+    ],
+    "task_description": "\"\n    Extract topics out of a passage of text from a scholarly article into a JSON array of strings\"\n    ",
+    "scenario": "Testing with a passage containing domain-specific jargon and acronyms that could be mistaken for separate topics to verify the prompt correctly identifies these as related to a single underlying topic rather than distinct topics"
+  }
+]

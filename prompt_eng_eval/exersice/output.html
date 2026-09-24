@@ -1,0 +1,274 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Prompt Evaluation Report</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                margin: 0;
+                padding: 20px;
+                color: #333;
+            }
+            .header {
+                background-color: #f0f0f0;
+                padding: 20px;
+                border-radius: 5px;
+                margin-bottom: 20px;
+            }
+            .summary-stats {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            .stat-box {
+                background-color: #fff;
+                border-radius: 5px;
+                padding: 15px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                flex-basis: 30%;
+                min-width: 200px;
+            }
+            .stat-value {
+                font-size: 24px;
+                font-weight: bold;
+                margin-top: 5px;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+            th {
+                background-color: #4a4a4a;
+                color: white;
+                text-align: left;
+                padding: 12px;
+            }
+            td {
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+                vertical-align: top;
+            }
+            tr:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+            .output-cell {
+                white-space: pre-wrap;
+            }
+            .score {
+                font-weight: bold;
+                padding: 5px 10px;
+                border-radius: 3px;
+                display: inline-block;
+            }
+            .score-high {
+                background-color: #c8e6c9;
+                color: #2e7d32;
+            }
+            .score-medium {
+                background-color: #fff9c4;
+                color: #f57f17;
+            }
+            .score-low {
+                background-color: #ffcdd2;
+                color: #c62828;
+            }
+            .output {
+                overflow: auto;
+                white-space: pre-wrap;
+            }
+
+            .output pre {
+                background-color: #f5f5f5;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                padding: 10px;
+                margin: 0;
+                font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+                font-size: 14px;
+                line-height: 1.4;
+                color: #333;
+                box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+                overflow-x: auto;
+                white-space: pre-wrap; 
+                word-wrap: break-word; 
+            }
+
+            td {
+                width: 20%;
+            }
+            .score-col {
+                width: 80px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Prompt Evaluation Report</h1>
+            <div class="summary-stats">
+                <div class="stat-box">
+                    <div>Total Test Cases</div>
+                    <div class="stat-value">4</div>
+                </div>
+                <div class="stat-box">
+                    <div>Average Score</div>
+                    <div class="stat-value">8.8 / 10</div>
+                </div>
+                <div class="stat-box">
+                    <div>Pass Rate (≥7)</div>
+                    <div class="stat-value">100.0%</div>
+                </div>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Scenario</th>
+                    <th>Prompt Inputs</th>
+                    <th>Solution Criteria</th>
+                    <th>Output</th>
+                    <th>Score</th>
+                    <th>Reasoning</th>
+                </tr>
+            </thead>
+            <tbody>
+    
+            <tr>
+                <td>Testing with a biology research passage containing domain-specific terminology and identifying both explicit topics (e.g., 'photosynthesis', 'cellular respiration') and implicit themes (e.g., 'energy transfer', 'metabolic processes')</td>
+                <td class="prompt-inputs"><strong>content:</strong> Photosynthesis and cellular respiration represent complementary metabolic pathways that govern energy transfer within biological systems. In photosynthetic organisms, light-dependent reactions occur in the thylakoid membrane, where photons excite chlorophyll molecules and drive electron transport chains that generate ATP and NADPH. These energy carriers subsequently power the Calvin cycle, fixing CO2 into glucose through a series of enzyme-catalyzed reactions. Conversely, cellular respiration oxidizes glucose through glycolysis, the citric acid cycle, and oxidative phosphorylation, releasing stored chemical energy in stepwise fashion. The electron transport chain in mitochondrial cristae couples redox reactions to proton gradient formation, enabling ATP synthase to phosphorylate ADP. These interconnected processes exemplify fundamental principles of bioenergetics, demonstrating how organisms convert and utilize energy for biosynthesis, active transport, and mechanical work.</td>
+                <td class="criteria">• Extracts explicit topics including photosynthesis, cellular respiration, ATP, NADPH, glucose, and electron transport chain<br>• Identifies implicit themes such as energy transfer, metabolic processes, and bioenergetics<br>• Returns output as a valid JSON array of strings with no additional fields or formatting</td>
+                <td class="output"><pre>```json
+[
+  "Photosynthesis",
+  "Cellular respiration",
+  "Metabolic pathways",
+  "Energy transfer",
+  "Light-dependent reactions",
+  "Thylakoid membrane",
+  "Chlorophyll",
+  "Electron transport chains",
+  "ATP",
+  "NADPH",
+  "Calvin cycle",
+  "CO2 fixation",
+  "Glucose",
+  "Enzyme-catalyzed reactions",
+  "Glycolysis",
+  "Citric acid cycle",
+  "Oxidative phosphorylation",
+  "Chemical energy",
+  "Mitochondrial cristae",
+  "Redox reactions",
+  "Proton gradient",
+  "ATP synthase",
+  "ADP phosphorylation",
+  "Bioenergetics",
+  "Biosynthesis",
+  "Active transport",
+  "Mechanical work"
+]
+```</pre></td>
+                <td class="score-col"><span class="score score-high">9</span></td>
+                <td class="reasoning">The solution fully satisfies all mandatory requirements: it is a valid JSON array containing only strings with topic names and no extra commentary. It meets all secondary criteria by extracting explicit topics (photosynthesis, cellular respiration, ATP, NADPH, glucose, electron transport chain) and identifying implicit themes (energy transfer, metabolic processes, bioenergetics). The extraction is thorough and accurate. While there are minor issues with granularity and some slight redundancy in topic selection, these do not violate the stated criteria and represent reasonable interpretive choices for topic extraction from a scholarly passage.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with a multi-disciplinary passage that spans economics and environmental science to ensure the prompt can extract diverse topics across different fields without conflating related but distinct concepts</td>
+                <td class="prompt-inputs"><strong>content:</strong> The integration of carbon pricing mechanisms with ecosystem service valuation presents a novel framework for addressing market failures in environmental degradation. Recent econometric analyses demonstrate that implementing shadow carbon costs of $85-120 per metric ton CO2-equivalent significantly influences land-use allocation decisions, particularly in tropical forest preservation versus agricultural expansion. Simultaneously, biodiversity offset markets have emerged as complementary instruments, with studies showing that wetland restoration projects generate measurable improvements in water filtration capacity, nutrient cycling efficiency, and species habitat connectivity. However, the economic instruments operate through distinct channels: carbon pricing functions through production cost internalization, while biodiversity credits function through direct conservation incentive structures. Macroeconomic modeling indicates that coordinated deployment of both mechanisms could reduce deforestation rates by 18-22% while maintaining agricultural productivity growth of 2.3% annually, though implementation requires careful calibration to avoid unintended distributional consequences across smallholder farming communities.</td>
+                <td class="criteria">• Extracts all major topics spanning both economics and environmental science domains without conflating distinct concepts<br>• Returns output as a valid JSON array of strings<br>• Distinguishes between related but separate topics (e.g., carbon pricing vs. biodiversity offset markets)</td>
+                <td class="output"><pre>```json
+[
+  "Carbon pricing mechanisms",
+  "Ecosystem service valuation",
+  "Market failures",
+  "Environmental degradation",
+  "Shadow carbon costs",
+  "Land-use allocation",
+  "Tropical forest preservation",
+  "Agricultural expansion",
+  "Biodiversity offset markets",
+  "Wetland restoration",
+  "Water filtration capacity",
+  "Nutrient cycling efficiency",
+  "Species habitat connectivity",
+  "Production cost internalization",
+  "Conservation incentive structures",
+  "Macroeconomic modeling",
+  "Deforestation rates",
+  "Agricultural productivity",
+  "Distributional consequences",
+  "Smallholder farming communities"
+]
+```</pre></td>
+                <td class="score-col"><span class="score score-high">9</span></td>
+                <td class="reasoning">The solution fully satisfies all mandatory requirements: it provides a valid JSON array of strings containing topics from the passage, with no extra commentary, and returns only the JSON array. It meets the secondary criteria by extracting topics spanning both domains and distinguishing between related concepts. The extraction is thorough and captures the main themes of the scholarly article. While there is slight inconsistency in topic granularity (some entries are more specific than others), this does not violate any stated criteria and represents a reasonable interpretation of 'topics' from a complex passage. The solution demonstrates strong understanding of the source material.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with a passage containing ambiguous or overlapping concepts (e.g., 'machine learning', 'artificial intelligence', 'neural networks') to verify the prompt extracts granular, non-redundant topics appropriately</td>
+                <td class="prompt-inputs"><strong>content:</strong> Recent advances in artificial intelligence have been driven largely by breakthroughs in machine learning, particularly through the development of deep neural networks. These neural networks, inspired by biological neurons, enable computers to learn patterns from data without explicit programming. Machine learning algorithms have become foundational to modern AI systems, powering applications from natural language processing to computer vision. The distinction between artificial intelligence as a broad field and machine learning as a specific subset is crucial for understanding how neural networks function as the computational backbone of contemporary intelligent systems. Transfer learning, a technique within deep learning, has further accelerated progress by allowing pre-trained neural networks to adapt to new tasks with minimal additional data.</td>
+                <td class="criteria">• Extracts distinct topics without redundancy (e.g., does not list both 'artificial intelligence' and 'AI' as separate topics)<br>• Identifies granular, specific concepts (e.g., 'neural networks', 'transfer learning', 'deep learning') in addition to broader categories<br>• Returns output as a valid JSON array of strings<br>• Avoids duplicating overlapping concepts while capturing their unique aspects</td>
+                <td class="output"><pre>```json
+[
+  "Artificial intelligence",
+  "Machine learning",
+  "Deep neural networks",
+  "Biological neurons",
+  "Pattern recognition",
+  "Machine learning algorithms",
+  "Natural language processing",
+  "Computer vision",
+  "Transfer learning",
+  "Deep learning",
+  "Pre-trained neural networks"
+]
+```</pre></td>
+                <td class="score-col"><span class="score score-high">8</span></td>
+                <td class="reasoning">The solution meets all mandatory requirements: it is a valid JSON array of strings containing topics from the article, with no extra commentary, and returns only the JSON array. Regarding secondary criteria, the solution demonstrates good granularity by including specific concepts (transfer learning, pre-trained neural networks) alongside broader categories (machine learning, deep learning). It successfully avoids redundancy. The main weakness is the inclusion of 'Biological neurons' which functions more as background context/inspiration rather than a primary topic of the scholarly article. The extraction is otherwise comprehensive and well-balanced between specificity and breadth.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with a sparse, methodology-focused passage from a research abstract that prioritizes identifying structural and procedural topics (e.g., 'experimental design', 'statistical analysis', 'sample selection') rather than just subject matter</td>
+                <td class="prompt-inputs"><strong>content:</strong> This study employed a mixed-methods research design combining quantitative surveys with qualitative interviews across three phases. Phase one involved stratified random sampling of 450 participants from five geographic regions, with sample stratification based on demographic variables including age, education level, and socioeconomic status. Phase two utilized a validated 28-item Likert-scale instrument with Cronbach's alpha reliability of 0.87, followed by exploratory factor analysis to identify underlying constructs. Statistical analysis included multivariate ANOVA and hierarchical linear modeling to account for nested data structures. Phase three comprised semi-structured interviews with 60 purposively selected participants, analyzed through thematic coding and constant comparison methodology. All procedures received institutional review board approval, and informed consent was obtained from all participants.</td>
+                <td class="criteria">• Identifies all methodological and procedural topics (e.g., research design, sampling strategy, data collection instruments, analysis techniques)<br>• Extracted topics are formatted as a JSON array of strings<br>• Avoids extracting only subject matter while capturing structural and analytical components</td>
+                <td class="output"><pre>```json
+[
+  "Mixed-methods research design",
+  "Quantitative surveys",
+  "Qualitative interviews",
+  "Stratified random sampling",
+  "Geographic regions",
+  "Demographic variables",
+  "Age",
+  "Education level",
+  "Socioeconomic status",
+  "Likert-scale instrument",
+  "Cronbach's alpha reliability",
+  "Exploratory factor analysis",
+  "Underlying constructs",
+  "Multivariate ANOVA",
+  "Hierarchical linear modeling",
+  "Nested data structures",
+  "Semi-structured interviews",
+  "Purposive sampling",
+  "Thematic coding",
+  "Constant comparison methodology",
+  "Institutional review board approval",
+  "Informed consent"
+]
+```</pre></td>
+                <td class="score-col"><span class="score score-high">9</span></td>
+                <td class="reasoning">The solution meets all mandatory requirements: it provides a valid JSON array of strings containing topics from the passage, with clean formatting and no extra commentary. It successfully captures the methodological and procedural focus requested in the criteria, including research design, sampling methods, instruments, and analysis techniques. The minor weaknesses involve some granularity choices and one borderline conceptual item, but these do not violate the core requirements. The extraction is thorough and well-organized, demonstrating strong understanding of what constitutes a 'topic' in this methodological context.</td>
+            </tr>
+        
+            </tbody>
+        </table>
+    </body>
+    </html>
+    

@@ -1,0 +1,50 @@
+[
+  {
+    "prompt_inputs": {
+      "height": "178 cm",
+      "weight": "68 kg",
+      "goal": "Marathon training with high carbohydrate intake for sustained energy during a 20km long run scheduled at 7am",
+      "restriction": "Vegetarian, no nuts"
+    },
+    "solution_criteria": [
+      "Meal plan spans full day with timing aligned to 7am long run (pre-run fuel, post-run recovery, and remaining meals)",
+      "Carbohydrate content supports endurance athlete needs (approximately 6-10g per kg body weight daily)",
+      "All meals and snacks respect vegetarian and nut-free restrictions",
+      "Plan is concise and practical for single day implementation"
+    ],
+    "task_description": "Write a compact, concise 1 day meal plan for a single athlete",
+    "scenario": "Testing with a high-performance endurance athlete (marathon runner) requiring high carbohydrate intake and sustained energy, with specific training timing constraints"
+  },
+  {
+    "prompt_inputs": {
+      "height": "180 cm",
+      "weight": "85 kg",
+      "goal": "Build muscle and strength through heavy weightlifting",
+      "restriction": "None"
+    },
+    "solution_criteria": [
+      "Meal plan is compact (1 day only) with clear timing around heavy lifting session",
+      "Protein distributed across 4+ meals/snacks with minimum 25g per eating occasion",
+      "Includes high-caloric density foods to support muscle-building goals for an 85kg athlete",
+      "Pre-workout and post-workout nutrition strategically positioned for recovery and performance"
+    ],
+    "task_description": "Write a compact, concise 1 day meal plan for a single athlete",
+    "scenario": "Testing with a strength/power athlete (weightlifter) emphasizing protein distribution, caloric density, and pre/post-workout nutrition around heavy lifting sessions"
+  },
+  {
+    "prompt_inputs": {
+      "height": "178",
+      "weight": "75",
+      "goal": "endurance training with muscle maintenance",
+      "restriction": "vegetarian, gluten-free, nut allergy"
+    },
+    "solution_criteria": [
+      "Meal plan accommodates all three dietary restrictions (vegetarian, gluten-free, nut allergy) without substitutions or exceptions",
+      "Provides adequate protein intake for muscle maintenance in an athlete of 75kg body weight",
+      "Includes 4-5 meals/snacks distributed throughout the day to support endurance training energy needs",
+      "All meals are practical and concise (no excessive preparation or ingredient lists)"
+    ],
+    "task_description": "Write a compact, concise 1 day meal plan for a single athlete",
+    "scenario": "Testing with an athlete having multiple dietary restrictions (vegetarian + gluten-free + nut allergy) to verify the plan accommodates constraints while maintaining athletic nutrition requirements"
+  }
+]

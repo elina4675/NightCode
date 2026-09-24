@@ -1,0 +1,71 @@
+[
+  {
+    "output": "```json\n[\n  \"Photosynthesis\",\n  \"Cellular respiration\",\n  \"Metabolic pathways\",\n  \"Energy transfer\",\n  \"Light-dependent reactions\",\n  \"Thylakoid membrane\",\n  \"Chlorophyll\",\n  \"Electron transport chains\",\n  \"ATP\",\n  \"NADPH\",\n  \"Calvin cycle\",\n  \"CO2 fixation\",\n  \"Glucose\",\n  \"Enzyme-catalyzed reactions\",\n  \"Glycolysis\",\n  \"Citric acid cycle\",\n  \"Oxidative phosphorylation\",\n  \"Chemical energy\",\n  \"Mitochondrial cristae\",\n  \"Redox reactions\",\n  \"Proton gradient\",\n  \"ATP synthase\",\n  \"ADP phosphorylation\",\n  \"Bioenergetics\",\n  \"Biosynthesis\",\n  \"Active transport\",\n  \"Mechanical work\"\n]\n```",
+    "test_case": {
+      "prompt_inputs": {
+        "content": "Photosynthesis and cellular respiration represent complementary metabolic pathways that govern energy transfer within biological systems. In photosynthetic organisms, light-dependent reactions occur in the thylakoid membrane, where photons excite chlorophyll molecules and drive electron transport chains that generate ATP and NADPH. These energy carriers subsequently power the Calvin cycle, fixing CO2 into glucose through a series of enzyme-catalyzed reactions. Conversely, cellular respiration oxidizes glucose through glycolysis, the citric acid cycle, and oxidative phosphorylation, releasing stored chemical energy in stepwise fashion. The electron transport chain in mitochondrial cristae couples redox reactions to proton gradient formation, enabling ATP synthase to phosphorylate ADP. These interconnected processes exemplify fundamental principles of bioenergetics, demonstrating how organisms convert and utilize energy for biosynthesis, active transport, and mechanical work."
+      },
+      "solution_criteria": [
+        "Extracts explicit topics including photosynthesis, cellular respiration, ATP, NADPH, glucose, and electron transport chain",
+        "Identifies implicit themes such as energy transfer, metabolic processes, and bioenergetics",
+        "Returns output as a valid JSON array of strings with no additional fields or formatting"
+      ],
+      "task_description": "\"\n    Extract topics out of a passage of text from a scholarly article into a JSON array of strings\"\n    ",
+      "scenario": "Testing with a biology research passage containing domain-specific terminology and identifying both explicit topics (e.g., 'photosynthesis', 'cellular respiration') and implicit themes (e.g., 'energy transfer', 'metabolic processes')"
+    },
+    "score": 9,
+    "reasoning": "The solution fully satisfies all mandatory requirements: it is a valid JSON array containing only strings with topic names and no extra commentary. It meets all secondary criteria by extracting explicit topics (photosynthesis, cellular respiration, ATP, NADPH, glucose, electron transport chain) and identifying implicit themes (energy transfer, metabolic processes, bioenergetics). The extraction is thorough and accurate. While there are minor issues with granularity and some slight redundancy in topic selection, these do not violate the stated criteria and represent reasonable interpretive choices for topic extraction from a scholarly passage."
+  },
+  {
+    "output": "```json\n[\n  \"Carbon pricing mechanisms\",\n  \"Ecosystem service valuation\",\n  \"Market failures\",\n  \"Environmental degradation\",\n  \"Shadow carbon costs\",\n  \"Land-use allocation\",\n  \"Tropical forest preservation\",\n  \"Agricultural expansion\",\n  \"Biodiversity offset markets\",\n  \"Wetland restoration\",\n  \"Water filtration capacity\",\n  \"Nutrient cycling efficiency\",\n  \"Species habitat connectivity\",\n  \"Production cost internalization\",\n  \"Conservation incentive structures\",\n  \"Macroeconomic modeling\",\n  \"Deforestation rates\",\n  \"Agricultural productivity\",\n  \"Distributional consequences\",\n  \"Smallholder farming communities\"\n]\n```",
+    "test_case": {
+      "prompt_inputs": {
+        "content": "The integration of carbon pricing mechanisms with ecosystem service valuation presents a novel framework for addressing market failures in environmental degradation. Recent econometric analyses demonstrate that implementing shadow carbon costs of $85-120 per metric ton CO2-equivalent significantly influences land-use allocation decisions, particularly in tropical forest preservation versus agricultural expansion. Simultaneously, biodiversity offset markets have emerged as complementary instruments, with studies showing that wetland restoration projects generate measurable improvements in water filtration capacity, nutrient cycling efficiency, and species habitat connectivity. However, the economic instruments operate through distinct channels: carbon pricing functions through production cost internalization, while biodiversity credits function through direct conservation incentive structures. Macroeconomic modeling indicates that coordinated deployment of both mechanisms could reduce deforestation rates by 18-22% while maintaining agricultural productivity growth of 2.3% annually, though implementation requires careful calibration to avoid unintended distributional consequences across smallholder farming communities."
+      },
+      "solution_criteria": [
+        "Extracts all major topics spanning both economics and environmental science domains without conflating distinct concepts",
+        "Returns output as a valid JSON array of strings",
+        "Distinguishes between related but separate topics (e.g., carbon pricing vs. biodiversity offset markets)"
+      ],
+      "task_description": "\"\n    Extract topics out of a passage of text from a scholarly article into a JSON array of strings\"\n    ",
+      "scenario": "Testing with a multi-disciplinary passage that spans economics and environmental science to ensure the prompt can extract diverse topics across different fields without conflating related but distinct concepts"
+    },
+    "score": 9,
+    "reasoning": "The solution fully satisfies all mandatory requirements: it provides a valid JSON array of strings containing topics from the passage, with no extra commentary, and returns only the JSON array. It meets the secondary criteria by extracting topics spanning both domains and distinguishing between related concepts. The extraction is thorough and captures the main themes of the scholarly article. While there is slight inconsistency in topic granularity (some entries are more specific than others), this does not violate any stated criteria and represents a reasonable interpretation of 'topics' from a complex passage. The solution demonstrates strong understanding of the source material."
+  },
+  {
+    "output": "```json\n[\n  \"Artificial intelligence\",\n  \"Machine learning\",\n  \"Deep neural networks\",\n  \"Biological neurons\",\n  \"Pattern recognition\",\n  \"Machine learning algorithms\",\n  \"Natural language processing\",\n  \"Computer vision\",\n  \"Transfer learning\",\n  \"Deep learning\",\n  \"Pre-trained neural networks\"\n]\n```",
+    "test_case": {
+      "prompt_inputs": {
+        "content": "Recent advances in artificial intelligence have been driven largely by breakthroughs in machine learning, particularly through the development of deep neural networks. These neural networks, inspired by biological neurons, enable computers to learn patterns from data without explicit programming. Machine learning algorithms have become foundational to modern AI systems, powering applications from natural language processing to computer vision. The distinction between artificial intelligence as a broad field and machine learning as a specific subset is crucial for understanding how neural networks function as the computational backbone of contemporary intelligent systems. Transfer learning, a technique within deep learning, has further accelerated progress by allowing pre-trained neural networks to adapt to new tasks with minimal additional data."
+      },
+      "solution_criteria": [
+        "Extracts distinct topics without redundancy (e.g., does not list both 'artificial intelligence' and 'AI' as separate topics)",
+        "Identifies granular, specific concepts (e.g., 'neural networks', 'transfer learning', 'deep learning') in addition to broader categories",
+        "Returns output as a valid JSON array of strings",
+        "Avoids duplicating overlapping concepts while capturing their unique aspects"
+      ],
+      "task_description": "\"\n    Extract topics out of a passage of text from a scholarly article into a JSON array of strings\"\n    ",
+      "scenario": "Testing with a passage containing ambiguous or overlapping concepts (e.g., 'machine learning', 'artificial intelligence', 'neural networks') to verify the prompt extracts granular, non-redundant topics appropriately"
+    },
+    "score": 8,
+    "reasoning": "The solution meets all mandatory requirements: it is a valid JSON array of strings containing topics from the article, with no extra commentary, and returns only the JSON array. Regarding secondary criteria, the solution demonstrates good granularity by including specific concepts (transfer learning, pre-trained neural networks) alongside broader categories (machine learning, deep learning). It successfully avoids redundancy. The main weakness is the inclusion of 'Biological neurons' which functions more as background context/inspiration rather than a primary topic of the scholarly article. The extraction is otherwise comprehensive and well-balanced between specificity and breadth."
+  },
+  {
+    "output": "```json\n[\n  \"Mixed-methods research design\",\n  \"Quantitative surveys\",\n  \"Qualitative interviews\",\n  \"Stratified random sampling\",\n  \"Geographic regions\",\n  \"Demographic variables\",\n  \"Age\",\n  \"Education level\",\n  \"Socioeconomic status\",\n  \"Likert-scale instrument\",\n  \"Cronbach's alpha reliability\",\n  \"Exploratory factor analysis\",\n  \"Underlying constructs\",\n  \"Multivariate ANOVA\",\n  \"Hierarchical linear modeling\",\n  \"Nested data structures\",\n  \"Semi-structured interviews\",\n  \"Purposive sampling\",\n  \"Thematic coding\",\n  \"Constant comparison methodology\",\n  \"Institutional review board approval\",\n  \"Informed consent\"\n]\n```",
+    "test_case": {
+      "prompt_inputs": {
+        "content": "This study employed a mixed-methods research design combining quantitative surveys with qualitative interviews across three phases. Phase one involved stratified random sampling of 450 participants from five geographic regions, with sample stratification based on demographic variables including age, education level, and socioeconomic status. Phase two utilized a validated 28-item Likert-scale instrument with Cronbach's alpha reliability of 0.87, followed by exploratory factor analysis to identify underlying constructs. Statistical analysis included multivariate ANOVA and hierarchical linear modeling to account for nested data structures. Phase three comprised semi-structured interviews with 60 purposively selected participants, analyzed through thematic coding and constant comparison methodology. All procedures received institutional review board approval, and informed consent was obtained from all participants."
+      },
+      "solution_criteria": [
+        "Identifies all methodological and procedural topics (e.g., research design, sampling strategy, data collection instruments, analysis techniques)",
+        "Extracted topics are formatted as a JSON array of strings",
+        "Avoids extracting only subject matter while capturing structural and analytical components"
+      ],
+      "task_description": "\"\n    Extract topics out of a passage of text from a scholarly article into a JSON array of strings\"\n    ",
+      "scenario": "Testing with a sparse, methodology-focused passage from a research abstract that prioritizes identifying structural and procedural topics (e.g., 'experimental design', 'statistical analysis', 'sample selection') rather than just subject matter"
+    },
+    "score": 9,
+    "reasoning": "The solution meets all mandatory requirements: it provides a valid JSON array of strings containing topics from the passage, with clean formatting and no extra commentary. It successfully captures the methodological and procedural focus requested in the criteria, including research design, sampling methods, instruments, and analysis techniques. The minor weaknesses involve some granularity choices and one borderline conceptual item, but these do not violate the core requirements. The extraction is thorough and well-organized, demonstrating strong understanding of what constitutes a 'topic' in this methodological context."
+  }
+]
